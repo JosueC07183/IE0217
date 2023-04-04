@@ -1,3 +1,6 @@
+/*
+* Se construyen las funciones.
+*/
 #include "campus.hpp"
 using namespace std;
 
