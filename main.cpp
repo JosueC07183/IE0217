@@ -1,3 +1,7 @@
+/*
+* Función main. Aquí se llaman las funciones 
+* creadas hasta el momento.
+*/
 #include <iostream>
 #include "campus.hpp"
 using namespace std;
