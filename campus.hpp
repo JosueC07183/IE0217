@@ -1,3 +1,7 @@
+/*
+* Aquí se hacen las declaraciones de las
+* funciones.
+*/
 #include <string>
 using namespace std;
 
