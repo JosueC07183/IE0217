@@ -13,7 +13,7 @@
 ## Jerarquía de los archivos
 A continuación se hizo uso del comando ``tree`` para ver como se distribuye esta carpeta.
 ```
-tareaUno/
+IE0217/
 ├─ campus.cpp
 ├─ campus.hpp
 ├─ Doxyfile
