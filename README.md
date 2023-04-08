@@ -26,7 +26,7 @@ tareaUno/
 ├─ MakeFile
 ├─ README.md
 ```
-> **Nota:** Las carpetas ``html`` y ``latex`` poseen muchísimos archivos, pero se han omitido para no hacer tan grande la extensión de este archivo.
+> **Nota:** Las carpetas ``html`` y ``latex`` poseen muchísimos archivos, pero se han omitido para no hacer tan grande la extensión de este archivo. Luego, en la carpeta ``html`` deberá encontrar el archivo ``index.html`` donde encontrará todo el código documentado
 
 ## Comandos para correr la tarea
 - Basta con abrir un terminal dentro de la carpeta ``tareaUno``y escribir el siguiente comando:
