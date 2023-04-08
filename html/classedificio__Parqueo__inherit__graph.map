@@ -1,0 +1,4 @@
+<map id="edificio_Parqueo" name="edificio_Parqueo">
+<area shape="rect" id="node1" title="Herencia edificio a edificio_Parqueo. Bastará con instanciarlos desde el main." alt="" coords="5,80,133,107"/>
+<area shape="rect" id="node2" href="$classedificio.html" title="Esta es la clase padre de las clases: edificio_Parqueo y Aulas." alt="" coords="35,5,104,32"/>
+</map>

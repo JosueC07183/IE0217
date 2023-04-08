@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classedificio.html" title="Esta es la clase padre de las clases: edificio_Parqueo y Aulas." alt="" coords="5,31,75,57"/>
+<area shape="rect" id="node2" href="$classAulas.html" title="Se crea la clase Aulas y se aprovecha la clase padre: edificio para hacer uso de algunos métodos." alt="" coords="157,5,216,32"/>
+<area shape="rect" id="node3" href="$classedificio__Parqueo.html" title="Herencia edificio a edificio_Parqueo. Bastará con instanciarlos desde el main." alt="" coords="123,56,251,83"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="main.cpp" name="main.cpp">
+<area shape="rect" id="node1" title="Esto es la primer tarea de IE0217." alt="" coords="78,5,161,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="23,155,103,181"/>
+<area shape="rect" id="node3" href="$campus_8hpp.html" title="Esta clase tiene la info general de la universidad; nombre del campus, cantidad de fincas y sus nombr..." alt="" coords="250,80,351,107"/>
+<area shape="rect" id="node5" href="$finca_8hpp.html" title="Aca se encontraran las principales caracteristicas de las fincas." alt="" coords="23,80,104,107"/>
+<area shape="rect" id="node6" href="$edificio_8hpp.html" title="Clase padre donde existen otras clases que heredan los metodos y atributos de ella." alt="" coords="128,80,225,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="271,155,330,181"/>
+</map>
