@@ -28,17 +28,17 @@ public:
  * @param cantidad_Fincas: variable entera cantidad de fincas.
  * @param name_Finca: nombre de la finca
  */
-    campus(string name_Campus, int cantidad_Fincas, string name_Finca);/// Constructor.
-    ~campus(); /// Destructor.
+    campus(string name_Campus, int cantidad_Fincas, string name_Finca);
+    ~campus();
 
-    void setName_Sede(string name_Campus); /// Metodo set para nombre del campus.
-    string getName_Sede(); ///Metodo get que muestra el nombre del campus.
+    void setName_Sede(string name_Campus);
+    string getName_Sede();
 
-    void setCantidad(int cantidad_Fincas); /// Metodo set para cantidad de fincas.
-    int getCantidad(); ///Metodo get que muestra la cantidad de fincas.
+    void setCantidad(int cantidad_Fincas);
+    int getCantidad();
     
-    void setName_Finca(string name_Finca); ///Metodo set para nombre de cada finca
-    string getName_Finca(); ///Metodo get que muestra el nombre de las fincas.
+    void setName_Finca(string name_Finca);
+    string getName_Finca();
 
 campus(){
     

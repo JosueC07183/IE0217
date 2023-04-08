@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @author Josué Salmerón Córdoba 
+ * @brief Esto es la primer tarea de IE0217.
+ * @version 0.1
+ * @date 2023-04-07
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 /*
 * Función main. Aquí se llaman las funciones 
 * creadas hasta el momento.
@@ -7,14 +18,18 @@
 #include "campus.hpp"
 #include "finca.hpp"
 #include "edificio.hpp"
-//#include "edificio_Parqueo.hpp"
-//#include "edificio_Aulas.hpp"
 
 using namespace std;
 
 int main(){
     
-    //bool bus_Service, *val_Service;// Variable para comprobar el transito del bus interno
+/**
+ * @brief En este archivo se hace el llamado de todas las clases para instanciar sus atributos.
+ * También se hizo uso de herencia para aprovechar los metodos de la clase edificio, por lo que
+ * solo basta con incluir el archivo: edificio.hpp en el main y gracias a esto se pueden acceder
+ * a todo lo que se creo en esta clase facilmente.
+ * 
+ */
     
     campus temp, temp2, temp3, temp4; // Variables para clase campus.
     finca  aux, aux2, aux3, aux4; // Variables para clase finca.
@@ -36,31 +51,6 @@ int main(){
     cout<<"Campus: "<< temp.getName_Sede() <<". Cantidad de fincas: "<< temp.getCantidad() << "\n"<<
     "Nombre de las fincas: "<<"\n"<<temp.getName_Finca() <<"\n"<<temp2.getName_Finca()<<"\n"<<temp3.getName_Finca()<<"\n"<<temp4.getName_Finca()<<endl;
     cout<<"\n";
-
-// Determinar si pasa bus interno por ciertas fincas.
-// PREGUNTAR ESTO.
-    /*if (temp.getName_Finca()=="Finca Aire")
-    {
-        bus_Service="Si";
-        val_Service= &bus_Service;
-    }
-    else if (temp2.getName_Finca()=="Finca Viento")
-    {
-        bus_Service="Si";
-        val_Service= &bus_Service;
-    }
-    else if (temp3.getName_Finca()=="Finca Fuego")
-    {
-        bus_Service="Si";
-        val_Service= &bus_Service;
-    }
-    else if(temp4.getName_Finca()=="Finca Agua"){
-        bus_Service="No";
-        val_Service= &bus_Service;
-    }
-    else{
-        return 0;
-    }*/
     
 cout<<"Info general de fincas:"<<endl;
 
@@ -183,9 +173,9 @@ cout<<"************Finca Aire: edificios aula************"<<endl;
     cout<<"Cada aula tiene: "<<Build6.get_Sillas()<< " sillas" <<endl;
     cout<<"Y las aulas tienen proyector ?: "<<Build6.get_Proyector()<<endl;
 
-    cout<<" -----------------"<<endl;
-    cout<<" |Información A.7|"<<endl;
-    cout<<" -----------------"<<endl;
+    cout<<" ---------------------------"<<endl;
+    cout<<"  Información edificio A.7  "<<endl;
+    cout<<" ---------------------------"<<endl;
     Build7.setPisos(3);
     Build7.setAscensor("No");
     Build7.setUbicacion("Frente al edificio de Ingeniería");
@@ -193,7 +183,6 @@ cout<<"************Finca Aire: edificios aula************"<<endl;
     Build7.set_NumAula(25);
     Build7.set_Sillas(18);
     Build7.set_Proyector("Si");
-    cout<<"Aquí la información del edificio A7."<<endl;
     cout<<"Edificio A7 posee: "<<Build7.getPisos()<< " pisos"<<endl;
     cout<<"Tiene ascensor ?: "<<Build7.getAscensor()<<endl;
     cout<<"Ubicación: "<<Build7.getUbicacion()<<endl;
@@ -201,6 +190,17 @@ cout<<"************Finca Aire: edificios aula************"<<endl;
     cout<<"Tiene: "<<Build7.get_NumAula()<< " aulas" <<endl;
     cout<<"Cada aula tiene: "<<Build7.get_Sillas()<< " sillas" <<endl;
     cout<<"Y las aulas tienen proyector ?: "<<Build7.get_Proyector()<<endl;
+    /* Información de un aula en específico */
+    Build7.set_EnumAula("IE 303");
+    Build7.setCantPizarra(2);
+    Build7.setLocation("la Finca Aire, en el tercer piso");
+    cout<<"***********************************"<<endl;
+    cout<<" Información aula del curso IE0217 "<<endl;
+    cout<<"***********************************"<<endl;
+    cout<< "El aula "<< Build7.get_EnumAula() << " se encuentra en " 
+    << Build7.getLocation()<< " posee " << Build7.getCantPizarra()<< " pizarras y "
+    << Build7.get_Proyector()<< " tiene proyector, además el edificio "<<Build7.get_Cafeteria()
+    << " cuenta con cafetería"<<endl;
 
 
     return 0;
