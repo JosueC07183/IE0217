@@ -22,6 +22,8 @@ IE0217/
 ├─ finca.cpp
 ├─ finca.hpp
 ├─ latex
+├─ html
+├─ LICENSE
 ├─ main.cpp
 ├─ MakeFile
 ├─ README.md
@@ -29,7 +31,7 @@ IE0217/
 > **Nota:** Las carpetas ``html`` y ``latex`` poseen muchísimos archivos, pero se han omitido para no hacer tan grande la extensión de este archivo. Luego, en la carpeta ``html`` deberá encontrar el archivo ``index.html`` donde encontrará todo el código documentado
 
 ## Comandos para correr la tarea
-- Basta con abrir un terminal dentro de la carpeta ``tareaUno``y escribir el siguiente comando:
+- Basta con abrir un terminal dentro de la carpeta ``tareaUno`` y escribir el siguiente comando:
 ```
 make run
 ```
