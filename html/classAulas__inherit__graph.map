@@ -1,4 +1,0 @@
-<map id="Aulas" name="Aulas">
-<area shape="rect" id="node1" title="Se crea la clase Aulas y se aprovecha la clase padre: edificio para hacer uso de algunos métodos." alt="" coords="11,80,69,107"/>
-<area shape="rect" id="node2" href="$classedificio.html" title="Esta es la clase padre de las clases: edificio_Parqueo y Aulas." alt="" coords="5,5,75,32"/>
-</map>
