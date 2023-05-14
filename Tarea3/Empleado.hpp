@@ -31,6 +31,7 @@ public:
     void setSalario(double salario);
     double getSalario();
 
+    Empleado(){}
 
 };
 
