@@ -52,10 +52,9 @@ int main() {
     do {
         
         cout << "----- Menú -----" << endl;
-        cout << "1. Validar entrada" << endl;
-        cout << "2. Leer archivo" << endl;
-        cout << "3. Buscar por departamento" << endl;
-        cout << "4. Buscar por salario" << endl;
+        cout << "1. Leer archivo" << endl;
+        cout << "2. Buscar por departamento" << endl;
+        cout << "3. Buscar por salario" << endl;
         cout << "0. Salir" << endl;
         cout << "Elija una opción: ";
         string entrada;
@@ -68,15 +67,8 @@ int main() {
         opcion = stoi(entrada);
         
         switch (opcion) {
-            
+
             case 1: {
-                
-                cout << "Procesando"<<endl;
-                break;
-                
-            }
-            
-            case 2: {
             
                 string nombreArchivo;
                 cout << "Ingrese el nombre del archivo: ";
@@ -104,7 +96,7 @@ int main() {
         
                 break;
 
-            case 3: {
+            case 2: {
                 string departamento;
                 cout << "Ingrese el departamento: ";
                 cin.ignore();
@@ -129,7 +121,7 @@ int main() {
                 break;
             }
 
-            case 4: {
+            case 3: {
                 int salarioMinimo, salarioMaximo;
                 string temp_Min, temp_Max;
                 regex patron3("^[0-9]+$");
