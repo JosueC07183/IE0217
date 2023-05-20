@@ -24,7 +24,7 @@ using namespace std;
 
 struct Empleado {
     string nombre;
-    string email;
+    string correo;
     int edad;
     string areaTrabajo;
     double salario;

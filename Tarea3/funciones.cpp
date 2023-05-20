@@ -1,3 +1,14 @@
+/**
+ * @file funciones.cpp
+ * @author Josue Salmeron Cordoba
+ * @brief 
+ * @version 0.1
+ * @date 2023-05-20
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -7,28 +18,25 @@
 using namespace std;
 
 
-/*bool validarEntrada(){
-    cout<<"proceso";
-}*/
-
 vector<Empleado> leerArchivo(string Datos){
-    cout<<"Información general de los empleados"<<endl;
+cout<<"Información general de los empleados"<<endl;
     vector<Empleado> empleados;
 
-    ifstream archivo("../../Datos.txt");
-    if (!archivo) {
-        cout << "Error al abrir el archivo." << endl;
-        exit(1);
+    fstream registros;
+    registros.open(Datos.c_str(), ios::in);
+    if (!registros){
+        cout << "El archivo no existe" << endl;
+        return empleados; // Devuelve un vector vacío si el archivo no existe
     }
 
     regex pattern("^(.*),(.*),(\\d+),(.*),(\\d+\\.?\\d*e?\\+?\\d*)$");
     string linea;
-    while (getline(archivo, linea)) {
+    while (getline(registros, linea)) {
         smatch matches;
         if (regex_match(linea, matches, pattern)) {
             Empleado empleado;
             empleado.nombre = matches[1].str();
-            empleado.email = matches[2].str();
+            empleado.correo = matches[2].str();
             empleado.edad = stoi(matches[3].str());
             empleado.areaTrabajo = matches[4].str();
             empleado.salario = stod(matches[5].str());
@@ -36,7 +44,7 @@ vector<Empleado> leerArchivo(string Datos){
         }
     }
 
-    archivo.close();
+    registros.close();
     return empleados;
 }
 
@@ -57,5 +65,6 @@ vector<Empleado> buscarPorSalario(const vector<Empleado>& empleados, int salario
             resultado.push_back(empleado);
         }
     }
+    
     return resultado;
 }

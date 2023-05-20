@@ -36,7 +36,7 @@ int main() {
                     if (regex_match(linea, matches, pattern)) {
                         Empleado empleado;
                         empleado.nombre = matches[1].str();
-                        empleado.email = matches[2].str();
+                        empleado.correo = matches[2].str();
                         empleado.edad = stoi(matches[3].str());
                         empleado.areaTrabajo = matches[4].str();
                         empleado.salario = stod(matches[5].str());
@@ -69,32 +69,21 @@ int main() {
         switch (opcion) {
 
             case 1: {
-            
-                string nombreArchivo;
-                cout << "Ingrese el nombre del archivo: ";
-                cin >> nombreArchivo;
-                fstream registros_2;
-                registros_2.open(nombreArchivo.c_str(), ios::in);
-
-                if(!registros_2){
-                    cout<<"El archivo no existe";
-                    exit(1);   
-                }
-                else{
-
-                    vector<Empleado> empleados = leerArchivo(nombreArchivo);
+                string Datos;
+               cout <<"ruta del archivo"<<endl;
+               cin>> Datos;
+               vector<Empleado> empleados = leerArchivo(Datos);
                     for (const auto& empleado : empleados) {
                         cout << "Nombre: " << empleado.nombre << endl;
-                        cout << "Email: " << empleado.email << endl;
+                        cout << "Email: " << empleado.correo << endl;
                         cout << "Edad: " << empleado.edad << endl;
                         cout << "Área de Trabajo: " << empleado.areaTrabajo << endl;
                         cout << "Salario: " << empleado.salario << endl;
                         cout << endl;
-                    }
                 }
             }
         
-                break;
+            break;
 
             case 2: {
                 string departamento;
@@ -108,7 +97,7 @@ int main() {
                     cout << "Empleados en el departamento de " << departamento << ":" << endl;
                     for (const auto& empleado : empleadosPorDepartamento) {
                         cout << "Nombre: " << empleado.nombre << endl;
-                        cout << "Email: " << empleado.email << endl;
+                        cout << "Correo: " << empleado.correo << endl;
                         cout << "Edad: " << empleado.edad << endl;
                         cout << "Salario: " << empleado.salario << endl;
                         cout << endl;
@@ -137,7 +126,7 @@ int main() {
                     cout << "Empleados con salario entre " << salarioMinimo << " y " << salarioMaximo << ":" << endl;
                     for (const auto& empleado : empleadosPorSalario) {
                         cout << "Nombre: " << empleado.nombre << endl;
-                        cout << "Email: " << empleado.email << endl;
+                        cout << "Correo: " << empleado.correo << endl;
                         cout << "Edad: " << empleado.edad << endl;
                         cout << "Área de Trabajo: " << empleado.areaTrabajo << endl;
                         cout << endl;
@@ -147,7 +136,7 @@ int main() {
                     cout<<"El rango de salarios no es válido"<<endl;
                     exit(1);
                 }
-                
+                registros.close();
                 break;
             }
 
