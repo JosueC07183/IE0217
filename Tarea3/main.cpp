@@ -1,7 +1,12 @@
 /**
  * @file main.cpp
  * @author Josue Salmeron Cordoba
- * @brief 
+ * @brief Primeramente se le pide al usuario la dirección del nombre del archivo a usar.
+ * Si el archivo no existe el programa termina de manera inmediata. Luego se tiene una
+ * expresión regular que controla toda la información que se manejará dentro del archivo
+ * en cuestión. Cuando se escribe bien la dirección del archivo se hace un loop while donde
+ * se almacenará la información correspondiente en un vector con el uso de push_back. Después
+ * se muestra el menu intuitivo con 4 opciones.
  * @version 0.1
  * @date 2023-05-17
  * 
@@ -18,7 +23,7 @@
 using namespace std;
 
 int main() {
-//Primer se muestra el menu.
+/**/
     vector<Empleado> empleados;
     string adrArchivo; // Variable de dirección del archivo.
     cout << "Ingrese la ruta completa del archivo: ";
@@ -45,6 +50,14 @@ int main() {
                 }
 
                 registros.close();
+/**
+ * @brief Aquí se muestra el menu. En este menu se maneja la expresión regular de solo admitir
+ * valores entre 0 y 3, de lo contrario, el programa le dirá al usuario que la opción digitada
+ *  es incorrecta y volverá a mostrar el menu. Es decir, se hizo uso de una expresión regular
+ * y el uso de la función stoi para contralar el flujo de esta parte del programa.
+ * 
+ * 
+ */
     int opcion;
     bool salir = true;
     regex opcionRegex("[0-4]"); //Expresión regular que filtra números del 0 al 3.
@@ -52,7 +65,7 @@ int main() {
     do {
         
         cout << "----- Menú -----" << endl;
-        cout << "1. Leer archivo" << endl;
+        cout << "1. Imprimir información de los empleados" << endl;
         cout << "2. Buscar por departamento" << endl;
         cout << "3. Buscar por salario" << endl;
         cout << "0. Salir" << endl;
@@ -63,28 +76,34 @@ int main() {
         cout << "Opción inválida. Intente nuevamente." << endl;
         continue;  // Volver al inicio del bucle
         }
-//Importante: hay que poner regex a las opciones de escribir.
+
         opcion = stoi(entrada);
         
         switch (opcion) {
-
+/**
+ * @brief El primer caso se encarga de mostrar la información del archivo donde se digitó la respectiva dirección,
+ * entonces, al dar opción 1, el programa desplegará toda la información correspondiente. 
+ * 
+ */
             case 1: {
-                string Datos;
-               cout <<"ruta del archivo"<<endl;
-               cin>> Datos;
-               vector<Empleado> empleados = leerArchivo(Datos);
+               vector<Empleado> empleados = leerArchivo(adrArchivo);
                     for (const auto& empleado : empleados) {
                         cout << "Nombre: " << empleado.nombre << endl;
                         cout << "Email: " << empleado.correo << endl;
                         cout << "Edad: " << empleado.edad << endl;
-                        cout << "Área de Trabajo: " << empleado.areaTrabajo << endl;
+                        cout << "Departamento: " << empleado.areaTrabajo << endl;
                         cout << "Salario: " << empleado.salario << endl;
                         cout << endl;
                 }
-            }
-        
+            }       
             break;
-
+/**
+ * @brief El segundo caso pide el nombre del departamento donde se mostrará todas las personas que pertenecen 
+ * a un puesto de trabajo en especifico. Se hizo uso de expresiones regulares para mostrar controlar las palabras
+ * que digite el usuario, es decir, que sea mayor a 2 letras, que se imprima la información aunque se escriban los
+ * nombres de los trabajos en minúscula. Luego, si el usuario escribe una número o un caracter que no tiene sentido 
+ * con lo solicitado entonces el programa termina.
+ */
             case 2: {
                 string departamento;
                 cout << "Ingrese el departamento: ";
@@ -109,7 +128,15 @@ int main() {
                 }
                 break;
             }
-
+/**
+ * @brief En el tercer caso se definen las variables enteras de salario minimo y maximo. Las cuales se deben pasar strings
+ * porque serán trabajadas con regex. Por tanto, en el condicional se usa un "Y" para que reconozca que si el usuario digita
+ * un valor extraño por consola de manera inmediata haga falsa toda la expresión y el programa termine, es decir, el programa
+ * no se tomará la molestia de solicitar el otro valor, pues no tendrá sentido alguno. Ahora, si el usuario escribe correctamente
+ * las cantidades a analizar entonces, el programa mostrará las personas que cumplen con los requisitos dados. Y si los valores son
+ * muy altos entonces el programa mostrará una excepción.
+ * 
+ */
             case 3: {
                 int salarioMinimo, salarioMaximo;
                 string temp_Min, temp_Max;
@@ -128,7 +155,7 @@ int main() {
                         cout << "Nombre: " << empleado.nombre << endl;
                         cout << "Correo: " << empleado.correo << endl;
                         cout << "Edad: " << empleado.edad << endl;
-                        cout << "Área de Trabajo: " << empleado.areaTrabajo << endl;
+                        cout << "Departamento: " << empleado.areaTrabajo << endl;
                         cout << endl;
                     }
                 }
@@ -139,7 +166,11 @@ int main() {
                 registros.close();
                 break;
             }
-
+/**
+ * @brief En este último caso, es el más sencillo ya que acá es donde el programa finaliza, y esto basta con escribir un 0, de esa manera 
+ * el ciclo do while() finalizará.
+ * 
+ */
             case 0: {
 
                 salir = false;
