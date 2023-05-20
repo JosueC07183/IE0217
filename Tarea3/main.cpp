@@ -82,20 +82,27 @@ int main() {
         switch (opcion) {
 /**
  * @brief El primer caso se encarga de mostrar la información del archivo donde se digitó la respectiva dirección,
- * entonces, al dar opción 1, el programa desplegará toda la información correspondiente. 
+ * entonces, al dar opción 1, el programa desplegará toda la información correspondiente. Ahora, si en el archivo 
+ * a analizar existe una línea sin datos, entonces el programa mostrará una excepeción.
  * 
  */
             case 1: {
+             try{ 
                vector<Empleado> empleados = leerArchivo(adrArchivo);
                     for (const auto& empleado : empleados) {
                         cout << "Nombre: " << empleado.nombre << endl;
-                        cout << "Email: " << empleado.correo << endl;
+                        cout << "Correo: " << empleado.correo << endl;
                         cout << "Edad: " << empleado.edad << endl;
                         cout << "Departamento: " << empleado.areaTrabajo << endl;
                         cout << "Salario: " << empleado.salario << endl;
                         cout << endl;
                 }
-            }       
+             }
+             catch(const std::exception& e){
+                cout << "Inconsistencia encontrada: " << e.what() << endl;
+
+             }
+            }
             break;
 /**
  * @brief El segundo caso pide el nombre del departamento donde se mostrará todas las personas que pertenecen 
@@ -147,21 +154,26 @@ int main() {
                 cin >> salarioMaximo;
                 temp_Min = to_string(salarioMinimo);
                 temp_Max = to_string(salarioMaximo);
-
-                if(regex_match(temp_Min, patron3) && regex_match(temp_Max, patron3)){
-                    vector<Empleado> empleadosPorSalario = buscarPorSalario(empleados, salarioMinimo, salarioMaximo);
-                    cout << "Empleados con salario entre " << salarioMinimo << " y " << salarioMaximo << ":" << endl;
-                    for (const auto& empleado : empleadosPorSalario) {
-                        cout << "Nombre: " << empleado.nombre << endl;
-                        cout << "Correo: " << empleado.correo << endl;
-                        cout << "Edad: " << empleado.edad << endl;
-                        cout << "Departamento: " << empleado.areaTrabajo << endl;
-                        cout << endl;
+                try
+                {
+                    if(regex_match(temp_Min, patron3) && regex_match(temp_Max, patron3)){
+                        vector<Empleado> empleadosPorSalario = buscarPorSalario(empleados, salarioMinimo, salarioMaximo);
+                        cout << "Empleados con salario entre " << salarioMinimo << " y " << salarioMaximo << ":" << endl;
+                        for (const auto& empleado : empleadosPorSalario) {
+                            cout << "Nombre: " << empleado.nombre << endl;
+                            cout << "Correo: " << empleado.correo << endl;
+                            cout << "Edad: " << empleado.edad << endl;
+                            cout << "Departamento: " << empleado.areaTrabajo << endl;
+                            cout << endl;
+                        }
+                    }
+                    else{
+                        cout<<"El rango de salarios no es válido"<<endl;
+                        exit(1);
                     }
                 }
-                else{
-                    cout<<"El rango de salarios no es válido"<<endl;
-                    exit(1);
+                catch(const std::exception& e){
+                    cout<<"Error: "<<e.what()<<endl;
                 }
                 registros.close();
                 break;

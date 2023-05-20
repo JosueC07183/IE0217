@@ -62,6 +62,9 @@ cout<<"Información general de los empleados"<<endl;
             empleado.salario = stoi(matches[5].str());
             empleados.push_back(empleado);
         }
+        else{
+            throw runtime_error("datos incompletos en una o varias líneas del documento");
+        }
     }
 
     registros.close();
@@ -102,15 +105,32 @@ vector<Empleado> buscarPorDepartamento(const vector<Empleado>& empleados, const 
  * @param empleados: personas de la corporación.
  * @param salarioMinimo: límite inferior de salario.
  * @param salarioMaximo: límite superior de salario.
+ * @param wage_Max: esta variable se compara con el salario minimo y atrapar la excepción cuando el salario digitado está fuera de rango
  * @return vector<Empleado> 
  */
 vector<Empleado> buscarPorSalario(const vector<Empleado>& empleados, int salarioMinimo, int salarioMaximo) {
     vector<Empleado> resultado;
+    int wage_Max = 0;
+    for (const auto& empleado:empleados)
+    {
+        if (empleado.salario>wage_Max)
+        {
+            wage_Max = empleado.salario;
+        }
+        
+    }
+    if (salarioMinimo>wage_Max)
+    {
+        throw std::invalid_argument("salario no está en el rango especificado");
+    }
+    else if (salarioMinimo>salarioMaximo){
+        throw std::invalid_argument("no es posible que el salario mínimo sea más grande que el salario máximo");
+    }
+    
     for (const auto& empleado : empleados) {
         if (empleado.salario >= salarioMinimo && empleado.salario <= salarioMaximo) {
             resultado.push_back(empleado);
         }
     }
-    
     return resultado;
 }
