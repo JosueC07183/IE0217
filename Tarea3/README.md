@@ -17,4 +17,6 @@ make
 ```
 
 > **Nota:** 
-- Es importante escribir la ruta del archivo correctamente, de lo contrario, el programa no funcionará. Una vez que haga _make_ en la terminal es importante mencionar que por la consola va estar esperando la dirección del archivo a trabajar.
+- Es importante escribir la ruta del archivo correctamente, de lo contrario, el programa no funcionará. Una vez que haga _make_ en la terminal es importante mencionar que la consola, estará esperando la dirección del archivo a trabajar. Por favor, ignorar un mensaje que
+muestra doxygen cuando abre el html, ya que interfiere con el mensaje que se muestra cuando inicia el programa, por lo que no habrá ningún 
+problema si se escribe la dirección del archivo, el programa funcionará bien.
