@@ -49,20 +49,19 @@ cout<<"Información general de los empleados"<<endl;
         return empleados;
     }
 
-    regex pattern("^(.*),(.*),(\\d+),(.*),(\\d+\\.?\\d*e?\\+?\\d*)$");
+     regex pattern("^(.*),(.*),(\\d+)?,(.*),(\\d+\\.?\\d*e?\\+?\\d*)$");
     string linea;
     while (getline(registros, linea)) {
         smatch matches;
         if (regex_match(linea, matches, pattern)) {
             Empleado empleado;
-            empleado.nombre = matches[1].str();
-            empleado.correo = matches[2].str();
-            empleado.edad = stoi(matches[3].str());
-            empleado.areaTrabajo = matches[4].str();
-            empleado.salario = stoi(matches[5].str());
+            empleado.nombre = matches[1].str().empty() ? throw runtime_error("NA") : matches[1].str();
+            empleado.correo = matches[2].str().empty() ? throw runtime_error("NA") : matches[2].str();
+            empleado.edad = matches[3].str().empty() ? throw runtime_error("NA") : stoi(matches[3].str());
+            empleado.areaTrabajo = matches[4].str().empty() ? throw runtime_error("NA") : matches[4].str();
+            empleado.salario = matches[5].str().empty() ? throw runtime_error("NA") : stod(matches[5].str());
             empleados.push_back(empleado);
-        }
-        else{
+        } else {
             throw runtime_error("datos incompletos en una o varias líneas del documento");
         }
     }
