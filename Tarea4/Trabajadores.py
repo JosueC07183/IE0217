@@ -23,4 +23,3 @@ class Empleado:
                     print(f"Salario: {empleado[4].strip()}")
                     print("\n")
 
-

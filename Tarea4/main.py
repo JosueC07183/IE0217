@@ -1,4 +1,4 @@
-
+from Trabajadores import Empleado
 
 while True:
     print("Menú principal")
@@ -11,6 +11,7 @@ while True:
     elif opcion == "1":
         archivo_principal = "../../employees.csv" # Archivo por default para calificar
         departamento = input("Escribe el departamento que desea buscar\n")
+        Empleado.buscarPorDepartamento(archivo_principal, departamento)
     elif opcion == "2":
         archivo_principal = "../../employees.csv" # Archivo por default para calificar
         sal_Min = int(input("Digite el salario mínimo: "))
