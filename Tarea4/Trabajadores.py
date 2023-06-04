@@ -22,4 +22,21 @@ class Empleado:
                     print(f"Edad: {empleado[2].strip()}")
                     print(f"Salario: {empleado[4].strip()}")
                     print("\n")
-
+# Se crea la función con tres argumentos, el nombre del archivo por default
+# los otros dos argumentos es salario pequeño y el grande.
+# Después se crea una variable para almacenar la lista de intervalos que el 
+# usuario desee buscar. Luego, se abre el archivo csv, se lee su contenido.
+# Y con el ciclo for entonces primero se ubica el array de estos valores para
+# poder realizar la comparación de ambas cantidades, hecho esto se guarda en la
+# variable interval_Salario por medio de append y esta función devolverá esa lista.
+    def buscarPorSalario(file_csv, sal_Min, sal_Max):
+        interval_Salario=[]
+        with open(file_csv, 'r') as file:
+            leer = csv.reader(file)
+            next(leer)
+            for empleado in leer:
+# Se ubica la columna donde está el array de salarios.                
+                salario = int(empleado[4].strip())
+                if sal_Min <= salario <= sal_Max:
+                    interval_Salario.append(empleado)
+        return interval_Salario
