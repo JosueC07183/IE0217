@@ -1,5 +1,5 @@
 import csv
-
+import re
 class Empleado:
 
 
@@ -38,5 +38,10 @@ class Empleado:
 # Se ubica la columna donde está el array de salarios.                
                 salario = int(empleado[4].strip())
                 if sal_Min <= salario <= sal_Max:
+                    correo = empleado[1].strip()
+                    if re.search(r"^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+.[a-zA-Z]{3,8}$", correo):
+                        interval_Salario.append(empleado)
+                    else:
+                        empleado[1] = "None"
                     interval_Salario.append(empleado)
         return interval_Salario
