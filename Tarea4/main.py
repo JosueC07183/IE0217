@@ -33,8 +33,10 @@ while True:
                 continue
         intervalo_Salario = Empleado.buscarPorSalario(archivo_principal, sal_Min, sal_Max)
         for empleado in intervalo_Salario:
+            correo = empleado[1].strip()
             print(f"Nombre: {empleado[0].strip()}")
-            print(f"Correo: {empleado[1].strip()}")
+            #print(f"Correo: {empleado[1].strip()}")
+            print(f"Correo: {correo}")
             print(f"Edad: {empleado[2].strip()}")
             print(f"Departamento: {empleado[4].strip()}")
             print("\n") # Se muestre un salto de línea por cada empleado.
