@@ -157,7 +157,7 @@ class Empleado:
          nombre,correo,edad,departamento, salario.
 
         """
-        interval_Salario = []
+        interval_Salario = [] 
         with open(file_csv, "r", encoding="utf-8") as file:
             leer = csv.reader(file)
             next(leer)
