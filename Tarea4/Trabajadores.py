@@ -103,6 +103,8 @@ class Empleado:
                     else:
                         print("Salario: None")
                     print("\n")
+            print("Puesto de trabajo no encontrado\n")
+
 
     def buscarPorSalario(file_csv, sal_Min, sal_Max):
         """Función que filtra los rangos de salarios.
@@ -197,4 +199,5 @@ class Empleado:
                         print("Salario: None")
 
                     interval_Salario.append(empleado)
+            print("Salarios no encontrados.\n")
         return interval_Salario
