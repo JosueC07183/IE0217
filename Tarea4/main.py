@@ -1,3 +1,4 @@
+import sys
 from Trabajadores import Empleado
 
 
@@ -34,7 +35,7 @@ while True:
     print("2. Consultar por salario")
     opcion = input("Ingrese una opción\n")
     if opcion == "0":
-        exit()
+        sys.exit()
     elif opcion == "1":
         archivo_principal = "../../employees.csv"
         departamento = input("Escribe el departamento que desea buscar\n")
@@ -51,7 +52,7 @@ while True:
                 if sal_Max < 0:
                     print("El salario máximo debe ser un número positivo")
                     continue
-                elif sal_Min > sal_Max:
+                if sal_Min > sal_Max:
                     print("Error en el orden del intervalo solicitado.\n")
                     continue
                 break
