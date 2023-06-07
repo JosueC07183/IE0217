@@ -28,7 +28,7 @@ from Trabajadores import Empleado
 # de los trabajadores que cumplen con lo digitado por el usuario.
 
 
-while True:
+while True:  
     print("Menú principal")
     print("0. Salir")
     print("1. Consultar por departamento")
@@ -37,7 +37,7 @@ while True:
     if opcion == "0":
         sys.exit()
     elif opcion == "1":
-        archivo_principal = "../../employees.csv"  
+        archivo_principal = "../../employees.csv"
         departamento = input("Escribe el departamento que desea buscar\n")
         Empleado.buscarPorDepartamento(archivo_principal, departamento)
     elif opcion == "2":
