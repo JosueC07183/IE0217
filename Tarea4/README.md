@@ -22,10 +22,10 @@ A continuación, se muestra el orden de los archivos de esta tarea.
 ```
 ├── IE0217
     ├── Tarea4
-    │   ├── main.py
-    │   ├── Makefile
-    │   ├── README.md
-    │   └── Trabajadores.py
+        ├── main.py
+        ├── Makefile
+        ├── README.md
+        └── Trabajadores.py
 ```
 
 ## Comandos para correr la tarea
