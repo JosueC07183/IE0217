@@ -37,7 +37,7 @@ while True:
     if opcion == "0":
         sys.exit()
     elif opcion == "1":
-        archivo_principal = "../../employees.csv" 
+        archivo_principal = "../../employees.csv"  
         departamento = input("Escribe el departamento que desea buscar\n")
         Empleado.buscarPorDepartamento(archivo_principal, departamento)
     elif opcion == "2":
