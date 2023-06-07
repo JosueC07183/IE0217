@@ -4,7 +4,7 @@ import re
 
 class Empleado:
     def buscarPorDepartamento(file_csv, departamento):
-        """Función que muestra el valor de lambda.
+        """Función que busca los empleados por departamento.
 
         Esta función contiene dos parámetros que se van a
         encargar de mostrar los registros de los empleados
@@ -43,7 +43,20 @@ class Empleado:
 
         Returns
         -------
-        empleado[] : muestra la lista de los empleados.
+        nombre : nombre del empleado que cumple con lo buscado.
+
+        correo : correo del empleado que cumple con lo buscado.
+
+        edad : edad del empleado que cumple con lo buscado.
+
+        departamento : puesto de trabajo de la persona que cum-
+        ple con lo buscado.
+
+        salario : cantidad de dinero que gana la persona que
+        cumple con lo buscado.
+
+        empleado[] : resume y muestra todos los datos anteriores
+        nombre,correo,edad,departamento, salario.
         """
 
         with open(file_csv, "r", encoding="utf-8") as file:
@@ -91,17 +104,57 @@ class Empleado:
                         print("Salario: None")
                     print("\n")
 
-    # Se crea la función con tres argumentos, el nombre del archivo
-    # por default los otros dos argumentos es salario pequeño y el
-    # grande. Después se crea una variable para almacenar la lista
-    # de intervalos que el usuario desee buscar. Luego, se abre el
-    # archivo csv, se lee su contenido. Y con el ciclo for entonces
-    # primero se ubica el array de estos valores para realizar
-    # la comparación de ambas cantidades, hecho esto se guarda en la
-    # variable interval_Salario por medio de append y esta función
-    # devolverá esa lista.
-
     def buscarPorSalario(file_csv, sal_Min, sal_Max):
+        """Función que filtra los rangos de salarios.
+
+        Se crea la función con tres argumentos, el nombre del archivo
+        por default los otros dos argumentos es salario mínimo y sala-
+        rio mayor. Después, se crea una variable para almacenar la lis-
+        ta de intervalos que el usuario desee buscar. Luego, se abre el
+        archivo csv, se lee su contenido. Y con el ciclo for primero se
+        ubica el array de estos valores para realizar la comparación de
+        ambos salarios. Hecho esto se guarda en la variable interval_Salario
+        por medio de append y esta función devolverá esa lista.
+
+        Parameters
+        ----------
+        file_csv : este parámetro se encarga de abrir el csv.
+         Importante codificar en utf-8, sino flake 8 no funci-
+         ona bien.
+
+         leer : junto con el comando next se puede saltar los
+         headlines del csv.
+
+         salario : int, columna donde se almacenan los salarios
+         de las personas trabajadoras.
+
+         sal_Min : int, salario mínimo que se escribe por conso-
+         la. Este será el primer valor que se solicita, se consi-
+         dera el caso cuando éste valor es mayor que sal_Max, no
+         admite números negativos, letras o algún símbolo/caracter.
+
+         sal_Max : int, salario máximo que se compara con sal_Min, no
+         se admite que sea menor que sal_Min, tampoco acepta letras, o
+         símbolos, caracteres, números negativos entre otros.
+
+         Returns
+         -------
+         nombre : nombre del empleado que cumple con lo buscado.
+
+         correo : correo del empleado que cumple con lo buscado.
+
+         edad : edad del empleado que cumple con lo buscado.
+
+         departamento : puesto de trabajo de la persona que cum-
+         ple con lo buscado.
+
+         salario : cantidad de dinero que gana la persona que
+         cumple con lo buscado.
+
+         empleado[] : resume y muestra todos los datos anteriores
+         nombre,correo,edad,departamento, salario.
+
+        """
         interval_Salario = []
         with open(file_csv, "r", encoding="utf-8") as file:
             leer = csv.reader(file)
