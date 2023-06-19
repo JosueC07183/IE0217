@@ -1,7 +1,10 @@
 from Functions import funciones
 
+# Análisis de datos con generación neta: Gas natural
 mostrar_Info = funciones.llamado_datos()
 orden_Info = funciones.orden_Datos()
-mean_value_1973 = funciones.mean_Energy("1973", 
-                                        "Electricity Net Generation From Natural Gas, All Sectors")
-print(mean_value_1973)
+bars = funciones.exp_analysis()
+CoefPearson = funciones.pearson_Val('Electricity Net Generation From Natural Gas, All Sectors', 'Electricity Net Generation From Geothermal, All Sectors')
+
+# Análisis de datos con generación neta: Carbón.
+mostrar_Info_2 = funciones.pie_Analysis()
