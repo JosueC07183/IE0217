@@ -89,9 +89,10 @@ def stats_energy(period, source_electric):
         mean_value = filtered_data[source_electric].mean()
         return mean_value
     except KeyError:
-        print('El año o el recurso de generación no existen en el csv.')
+        print("El año o el recurso de generación no existen en el csv.")
         return None
     return 0
+
 
 def stats2_energy(period, source_electric):
     """
@@ -118,7 +119,7 @@ def stats2_energy(period, source_electric):
         auto_value = filtered_data[source_electric].autocorr()
         return auto_value
     except KeyError:
-        print('El año o el recurso de generación no existen en el csv.')
+        print("El año o el recurso de generación no existen en el csv.")
         return None
 
 
@@ -147,7 +148,7 @@ def stats3_energy(period, source_electric):
         std_value = filtered_data[source_electric].std()
         return std_value
     except KeyError:
-        print('El año o el recurso de generación no existen en el csv.')
+        print("El año o el recurso de generación no existen en el csv.")
         return None
 
 
@@ -298,7 +299,7 @@ def pie_analysis():
 
     labels = ["1983", "1984", "1985", "1986", "1987"]
     sizes = np.array(values_eighty)
-    colors = ["gold", "yellowgreen", "sienna", "pink", "navy"]
+    colors = ["gold", "yellowgreen", "sienna", "pink", "aquamarine"]
     explode = (0.1, 0, 0, 0, 0)  # explode 1st slice
 
     labels_2 = ["2003", "2004", "2005", "2006", "2007"]
@@ -306,8 +307,6 @@ def pie_analysis():
     colors_2 = ["purple", "lime", "cyan", "firebrick", "springgreen"]
     explode_2 = (0.1, 0, 0, 0, 0)  # explode 1st slice
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
-
-    # Gráfico de pastel 1
     ax1.pie(
         sizes,
         explode=explode,
@@ -317,9 +316,7 @@ def pie_analysis():
         shadow=True,
         startangle=140,
     )
-    ax1.set_title("Periodo 1980")
-
-    # Gráfico de pastel 2
+    ax1.set_title("Years 1983-87")
     ax2.pie(
         sizes_2,
         explode=explode_2,
@@ -329,8 +326,7 @@ def pie_analysis():
         shadow=True,
         startangle=140,
     )
-    ax2.set_title("Periodo 2000")
-
+    ax2.set_title("Years 2003-07")
     plt.axis("equal")
     plt.tight_layout()
     plt.show()
@@ -340,43 +336,73 @@ def pie_analysis():
 def scatter_analysis():
     """
     En esta función se implementa un diagrama de dispersión
-    con base a la autocorrelación de los años 2011-2021 en un
+    con base a la autocorrelación de los años 90's y 2000 en un
     periodo de 10 años. Así, con un loop for se recorren los años
     seleccionados y se guardan en una lista para luego graficarlos.
     Parameters
     ----------
     period_twothousands : periodo de años.
+    period_ninetys : periodo de años.
     values_twothousands : lista que guarda las autocorrelaciones de
+    cada año.
+    values_ninetys : lista que guarda las autocorrelaciones de
     cada año.
     Returns
     --------
     Diagrama de dispersión con las autocorrelaciones de los años
-    en estudio.
+    en estudio, 90's e inicios del 2000.
     """
+    period_ninetys = [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+    ]
     period_twothousands = [
+        "2001",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
         "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
     ]
     values_twothousands = []
+    values_ninetys = []
+    for j in period_ninetys:
+        auto_value = stats2_energy(
+            j,
+            "Electricity Net Generation Total (including from sources not shown), All Sectors",
+        )
+        values_ninetys.append(auto_value)
     for i in period_twothousands:
         auto_value = stats2_energy(
             i,
             "Electricity Net Generation Total (including from sources not shown), All Sectors",
         )
         values_twothousands.append(auto_value)
-    plt.scatter(period_twothousands, values_twothousands)
+    
+    plt.scatter(period_ninetys, values_ninetys, label="1990-2000", color="teal")
+    plt.scatter(
+        period_twothousands, values_twothousands, label="2000-2010", color="magenta"
+    )
+    
     plt.xlabel("Years")
     plt.ylabel("Autocorrelation")
+    plt.title(
+        "Electricity Net Generation Total (including from sources not shown), All Sectors"
+    )
+    plt.legend()
     plt.show()
     return 0
 
