@@ -316,7 +316,7 @@ def pie_analysis():
         shadow=True,
         startangle=140,
     )
-    ax1.set_title("Years 1983-87")
+#    ax1.set_title("Years 1983-87")
     ax2.pie(
         sizes_2,
         explode=explode_2,
@@ -326,9 +326,10 @@ def pie_analysis():
         shadow=True,
         startangle=140,
     )
-    ax2.set_title("Years 2003-07")
+#    ax2.set_title("Years 2003-07")
     plt.axis("equal")
     plt.tight_layout()
+    plt.suptitle("Electricity Net Generation From Coal, All Sectors")
     plt.show()
     return 0
 
