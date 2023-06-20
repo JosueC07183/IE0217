@@ -27,9 +27,10 @@ el otro detalle es que este dato fue constante en el 2004 y 2007, esto es... lo 
 ### Tercer análisis
 - Para este análisis se realizó un diagrama de dispersión para un período de 10 años en la decada de los noventas e inicios del 2000, esto a partir de la autocorrelación que se obtuvo en cada año. Por su parte, en los años noventa, se tienen datos agrupados conforme los años pasan, esto indica que... a como también existen algunos otros que están dispersos, esto es....
 Para los años 2000, se tiene un agrupamiento similar con algunos datos muy dispersos. 
+![App Scrennshot](https://github.com/JosueC07183/IE0217/blob/main/Tarea5/Imgs/Figure_3.png)
 
 >**Nota**: Los datos del eje X, se ven así porque la imagen debe expandirse para poder observarla con mayor claridad.
-![App Scrennshot](https://github.com/JosueC07183/IE0217/blob/main/Tarea5/Imgs/Figure_3.png)
+
 
 ## Jerarquía de archivos.
 A continuación, se muestra el orden de los archivos de esta tarea.
@@ -43,9 +44,12 @@ A continuación, se muestra el orden de los archivos de esta tarea.
         └── Functions
             ├──funciones.py
         ├──Imgs
-            ├──Figure_1.png
-            ├──Figure_2.png
-            ├──Figure_3.png
+            ├── 4.png
+            ├── 5.png
+            ├── Figure_1.png
+            ├── Figure_2.1.png
+            ├── Figure_2.png
+            └── Figure_3.png
         
 ```
 
@@ -53,4 +57,7 @@ A continuación, se muestra el orden de los archivos de esta tarea.
 > Basta con abrir una terminal dentro de la carpeta donde se encuentren todos los archivos y escribir ``make``. Hecho esto se genera una carpeta ``__pycache__``, para eliminar esto basta con escribir ``make clean`` y así puede limpiar el directorio actual.
 
 ## Manejo de excepciones.
-> Este pequeño apartado es una breve demostración del manejo de excepciones dentro de esta tarea.
+- Este pequeño apartado es una breve demostración del manejo de excepciones dentro de esta tarea. La primer excepción se trata de algunos datos que no son de tipo float sino más bien string, esto porque en ese año, no se realizaba dicho proceso para obtener electricidad, por lo que no existen registros, entonces lo que hay es una etiqueta: _Not Available_, por lo que a la hora de hacer el análisis sin tener una excepción, el programa mostrará errores. Solo que en este caso se logró atrapar dicha excepción.
+![App Scrennshot](https://github.com/JosueC07183/IE0217/blob/main/Tarea5/Imgs/4.png)
+- La otra excepción que se atrapó fue la de tratar de realizar un análisis en un rango de años que no está disponible en el csv, o sino tratar de extraer los datos de generación neta de electricidad de un recurso que no se considera en el csv, _Water_ por ejemplo. Entonces, a la hora de hacer el llamado de la función *stats_energy()*, esto mostrará un error, pero al tener el **try-except** esto no sucederá.
+![App Scrennshot](https://github.com/JosueC07183/IE0217/blob/main/Tarea5/Imgs/5.png)
