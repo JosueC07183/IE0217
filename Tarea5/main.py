@@ -16,9 +16,9 @@ prueba = funciones.stats_energy('1990', 'Electricity Net Generation From Water, 
 # generación neta: Gas natural.
 bars = funciones.exp_analysis()
 
-# esto genera un error. Pero aquí se puede hace el catch, luego,-
-# realizar un ciclo for que vaya iterando los años, y muestre el-
-#  maximo y el minimo.
+# Aquí se hace el manejo de excepciones una vez más, pero es una-
+# de tipo: TypeError.
+
 CoefPearson = funciones.pearson_val(
     "Electricity Net Generation From Natural Gas, All Sectors",
     "Electricity Net Generation From Solar, All Sectors",
