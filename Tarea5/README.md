@@ -16,6 +16,7 @@
 ### Primer análisis
 -Se consideraron los años 1973 al 1978, 1990 al 1995 y 2000 al 2005, de donde se obtuvo la media de la generación de electricidad neta a partir de gas natural, así, realizando 3 gráficos de barras se obtuvo el siguiente resultado:
 ![App Screenshot](https://github.com/JosueC07183/IE0217/blob/main/Tarea5/Imgs/Figure_1.png)
+
 Note que el comportamiento tiene una tendencia parábolica, no se puede decir que es 100% exponencial porque el aumento no es tan brusco ya que en los años 70's hubo una producción considerable que con los años fue haciéndose más grande.
 
 ### Segundo análisis
