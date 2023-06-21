@@ -8,4 +8,4 @@
 #### Repositorios de tareas 
 
 ## Información general
-> En este repositorio (por ahora) se encuentran las carpetas de las tareas 1, 3 y 4. **Por favor**, acceder a cada carpeta correspondiente donde podrá encontrar el archivo README adecuado para cada asignación. Este README es únicamente una guía para el usuario lector.
+> En este repositorio (por ahora) se encuentran las carpetas de las tareas 1, 3, 4 y 5. **Por favor**, acceder a cada carpeta correspondiente donde podrá encontrar el archivo README adecuado para cada asignación. Este README es únicamente una guía para el usuario lector.
