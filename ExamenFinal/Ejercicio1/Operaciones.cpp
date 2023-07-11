@@ -12,9 +12,9 @@ void ops::Resultado()
 {
     
     cout << "La suma de: " << x << " y "<< y << " es:" <<Suma() << endl;
-    cout << "La suma de: " << x << " y "<< y << " es:" <<Resta() << endl;
-    cout << "La suma de: " << x << " y "<< y << " es:" <<Producto() << endl;
-    cout << "La suma de: " << x << " y "<< y << " es:" <<Division() << endl;
+    cout << "La resta de: " << x << " y "<< y << " es:" <<Resta() << endl;
+    cout << "El producto de: " << x << " y "<< y << " es:" <<Producto() << endl;
+    cout << "La división de: " << x << " y "<< y << " es:" <<Division() << endl;
 }
 
 float ops::Suma()
