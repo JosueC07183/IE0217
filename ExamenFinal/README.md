@@ -7,7 +7,7 @@
 ### Pregunta 2
 > _Respuesta:_ La recursividad se puede resumir en una acción que se repite muchas veces por medio de un patrón, una serie, por ejemplo, la función factorial, el algoritmo de las torres de Hanoi. Este tipo de algoritmos poseen un comportamiento que se pueden programar usando recursividad, aquí es donde nace la gran utilidad de hacer uso de ella.
 ### Pregunta 3
-> _Respuesta:_Las listas se usan cuando se trabajan datos iguales, las tuplas es lo contrario, en ellas se podrá escribir tipos de datos tipo int, float, double, string. Ahora, el mejor caso para usar listas es cuando se desea hacer un análisis de datos, por ejemplo, hacer un simpleo conteo de los elementos que ésta contiene. Luego, en el caso de tuplas esto se usa para construir diccionarios.
+> _Respuesta:_ Las listas se usan cuando se trabajan datos iguales, las tuplas es lo contrario, en ellas se podrá escribir tipos de datos tipo int, float, double, string. Ahora, el mejor caso para usar listas es cuando se desea hacer un análisis de datos, por ejemplo, hacer un simpleo conteo de los elementos que ésta contiene. Luego, en el caso de tuplas esto se usa para construir diccionarios.
 
 ### Pregunta 4
 > _Respuesta:_ Básicamente, esto es cuando se crea una clase con varios métodos, sea la clase: Carro, con los métodos setNumllantas(), setNumColor(), ahora, suponga que se crea otra clase llamada: Ventas_Carro, de donde se declara lo siguiente: class Ventas_Carro public Carr{}, aquí es donde se crea la herencia, es decir, ahora desde la clase Ventas_Carro es posible usar los métodos setNumllantas() y setNumColor() sin problema alguno. En palabras sencillas, es poder hacer uso de los métodos de otra clase para simplificar líneas de código.
